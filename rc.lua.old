@@ -1,4 +1,0 @@
-local fennel = require("fennel").install()
-fennel.path = fennel.path .. ";.config/awesome/?.fnl"
-
-require("cfg_old")
