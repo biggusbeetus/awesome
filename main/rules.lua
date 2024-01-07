@@ -42,6 +42,7 @@ function _M.get(clientkeys, clientbuttons)
 					"Brave-browser",
 					"Inkscape",
 					"Gimp-2.10",
+          "Minecraft* 1.20.1",
 				},
 
 				-- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -70,6 +71,7 @@ function _M.get(clientkeys, clientbuttons)
 
 		{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "1" } },
 		{ rule = { class = "Spotify" }, properties = { screen = 1, tag = "9" } },
+		{ rule = { class = "Minecraft* 1.20.1" }, properties = { screen = 1, tag = "4" } },
 	}
 
 	return rules
