@@ -8,4 +8,4 @@ run() {
 }
 
 run dropbox start
-run compton
+run picom 

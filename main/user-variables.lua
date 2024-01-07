@@ -1,11 +1,3 @@
--- local _M = {
---   terminal = "wezterm",
---   modkey = "Mod4",
---   editor = os.getenv("EDITOR") or "editor",
--- }
--- 
--- return _M
-
 local home = os.getenv("HOME")
 
 local _M = {
