@@ -23,9 +23,8 @@ require("awful.autofocus")
 -- Error handling
 require("main.error-handling")
 
--- Variable definitions
-beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
-beautiful.wallpaper = RC.vars.wallpaper
+-- Load theme
+require("main.theme")
 
 -- -- --
 
