@@ -10,7 +10,7 @@ local _M = {}
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-function _M.get(clientkeys, clientbuttons)
+function _M.get(clientkeys)
 	local rules = {
 
 		-- All clients will match this rule.
@@ -22,7 +22,6 @@ function _M.get(clientkeys, clientbuttons)
 			focus = awful.client.focus.filter,
 			raise = true,
 			keys = clientkeys,
-			buttons = clientbuttons,
 			screen = awful.screen.preferred,
 			placement = awful.placement.centered + awful.placement.no_overlap + awful.placement.no_offscreen,
       floating = false

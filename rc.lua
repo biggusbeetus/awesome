@@ -82,10 +82,11 @@ root.keys(RC.globalkeys)
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Statusbar: Wibar
-require("deco.statusbar")
+local statusbar = require("statusbar.statusbar")
+statusbar()
 
 -- Rules
-awful.rules.rules = main.rules(bindings.clientkeys(), bindings.clientbuttons())
+awful.rules.rules = main.rules(bindings.clientkeys())
 
 -- Signals
 require("main.signals")
