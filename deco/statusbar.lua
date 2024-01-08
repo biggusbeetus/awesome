@@ -21,7 +21,7 @@ local _M = {}
 
 -- {{{ Wibar
 -- Create a textclock widget
-TEXT_CLOCK = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock()
 
 awful.screen.connect_for_each_screen(function(s)
   -- Wallpaper
@@ -69,9 +69,9 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
-      KEYBOARD_LAYOUT,
+      mykeyboardlayout,
       wibox.widget.systray(),
-      TEXT_CLOCK,
+      mytextclock,
       s.mylayoutbox,
     },
   }

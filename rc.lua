@@ -57,10 +57,6 @@ RC.layouts = main.layouts()
 -- Tags
 RC.tags = main.tags()
 
--- Statusbar: Wibar
-local statusbar = require("statusbar.default.statusbar")
-
-statusbar()
 -- Menu
 
 if has_fdo then
@@ -83,7 +79,10 @@ root.buttons(bindings.globalbuttons())
 root.keys(RC.globalkeys)
 
 -- Keyboard map indicator and switcher
-KEYBOARD_LAYOUT = awful.widget.keyboardlayout()
+mykeyboardlayout = awful.widget.keyboardlayout()
+
+-- Statusbar: Wibar
+require("deco.statusbar")
 
 -- Rules
 awful.rules.rules = main.rules(bindings.clientkeys(), bindings.clientbuttons())
@@ -93,4 +92,3 @@ require("main.signals")
 
 -- Autorun
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
-
