@@ -2,8 +2,8 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 -- {{{ Styles
-THEME.font = "Hack 12"
-THEME.taglist_font = "Hack 10"
+THEME.font = "JetBrains Mono 12"
+THEME.taglist_font = "JetBrains Mono Semibold 10"
 
 -- {{{ Colors
 THEME.bg_normal = "#3F3F3F"
@@ -19,10 +19,9 @@ THEME.fg_minimize = "#DCDCCC"
 
 -- {{{ Borders
 THEME.useless_gap = dpi(5)
-THEME.border_width = dpi(5)
+THEME.border_width = dpi(3)
 THEME.border_normal = "#3F3F3F"
-THEME.border_focus = "#6F6F6F"
-THEME.border_colors = { "#cd4545", "#f3a333", "#f16821", "#fffe9a" }
+THEME.border_focus = { "#DCA3A3", "#EC93D3", "#93E0E3", "#60B48A", "#F0DFAF"}
 THEME.border_marked = "#CC9393"
 -- }}}
 
