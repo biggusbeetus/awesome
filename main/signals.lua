@@ -1,12 +1,16 @@
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+local naughty = require("naughty")
 
 -- Widget and layout library
 local wibox = require("wibox")
 
 -- Theme handling library
 local beautiful = require("beautiful")
+
+math.randomseed(os.time())
+local current_color
 
 -- Custom Local Library: Common Functional Decoration
 require("deco.titlebar")
@@ -35,7 +39,12 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-	c.border_color = beautiful.border_focus
+  local next_color = math.random(#beautiful.border_focus)
+  if current_color == next_color then
+    next_color = ((next_color + 1) % #beautiful.border_focus) + 1
+  end
+	c.border_color = beautiful.border_focus[next_color]
+  current_color = next_color
 end)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
