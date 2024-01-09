@@ -115,6 +115,16 @@ function _M.get()
 			awful.util.spawn("rofi -show run")
 		end, { description = "Execute Rofi Run", group = "launcher" }),
 
+    -- Keyboard
+		awful.key({ modkey }, "e", function()
+      if RC.vars.keyboard == "us" then
+        RC.vars.keyboard = "us -variant intl"
+      else
+        RC.vars.keyboard = "us"
+      end
+			awful.util.spawn("setxkbmap -layout " .. RC.vars.keyboard)
+		end, { description = "Change to English Standard Keyboard", group = "keyboard" }),
+
 		awful.key({ modkey }, "x", function()
 			awful.prompt.run({
 				prompt = "Run Lua code: ",
@@ -135,7 +145,7 @@ function _M.get()
 		awful.key({ modkey }, "]", function()
 			awful.util.spawn("amixer -D pulse sset Master 2%-", false)
 		end, { description = "Volume down", group = "media" }),
-		awful.key({ modkey }, "m", function()
+		awful.key({ modkey }, "\\", function()
 			awful.util.spawn("amixer -D pulse sset Master toggle", false)
 		end, { description = "Mute", group = "media" }),
 

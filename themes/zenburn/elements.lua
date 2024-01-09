@@ -44,6 +44,7 @@ THEME.mouse_finder_color = "#CC9393"
 -- Example:
 --theme.taglist_bg_focus = "#CC9393"
 -- }}}
+THEME.tasklist_fg_focus = THEME.border_focus[5]
 
 -- {{{ Widgets
 -- You can add as many variables as

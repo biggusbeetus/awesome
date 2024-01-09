@@ -17,14 +17,14 @@ function _M.get(clientkeys)
 		{
 			rule = {},
 			properties = {
-			border_width = beautiful.border_width,
-			border_color = beautiful.border_normal,
-			focus = awful.client.focus.filter,
-			raise = true,
-			keys = clientkeys,
-			screen = awful.screen.preferred,
-			placement = awful.placement.centered + awful.placement.no_overlap + awful.placement.no_offscreen,
-      floating = false
+				border_width = beautiful.border_width,
+				border_color = beautiful.border_normal,
+				focus = awful.client.focus.filter,
+				raise = true,
+				keys = clientkeys,
+				screen = awful.screen.preferred,
+				placement = awful.placement.centered,
+				floating = false,
 			},
 		},
 
@@ -34,14 +34,17 @@ function _M.get(clientkeys)
 				instance = {
 					"copyq", -- Includes session name in class.
 					"pinentry",
+					"libreoffice",
+					"pcmanfm",
 				},
 				class = {
 					"Arandr",
 					"Blueman-manager",
 					"Brave-browser",
+          "Brave",
 					"Inkscape",
 					"Gimp-2.10",
-          "Minecraft* 1.20.1",
+					"Minecraft* 1.20.1",
 				},
 
 				-- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -54,6 +57,8 @@ function _M.get(clientkeys)
 				},
 			},
 			properties = {
+				honor_workarea = true,
+				placement = awful.placement.centered,
 				floating = true,
 			},
 		},
@@ -68,7 +73,9 @@ function _M.get(clientkeys)
 			},
 		},
 
+		{ rule_any = { class = { "Inkscape", "Gimp-2.10" } }, properties = { screen = 1, tag = "4" } },
 		{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "1" } },
+		{ rule = { class = "org.wezfurlong.wezterm" }, properties = { screen = 1, tag = "2" } },
 		{ rule = { class = "Spotify" }, properties = { screen = 1, tag = "9" } },
 		{ rule = { class = "Minecraft* 1.20.1" }, properties = { screen = 1, tag = "4" } },
 	}
