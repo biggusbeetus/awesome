@@ -13,21 +13,22 @@ local xrdb = xresources.get_current_theme()
 THEME.font = "JetBrains Mono 12"
 THEME.taglist_font = "JetBrains Mono Semibold 10"
 
+THEME.focus_colors = { xrdb.color2, xrdb.color11, xrdb.color12, xrdb.color13, xrdb.color14 }
 -- {{{ Borders
 THEME.useless_gap = dpi(5)
 THEME.border_width = dpi(4)
-THEME.border_normal = xrdb.color0
-THEME.border_focus = {  xrdb.color2, xrdb.color3, xrdb.color4, xrdb.color5, xrdb.color6,}
-THEME.border_marked = xrdb.color1
+THEME.border_color_normal = xrdb.color0
+THEME.border_color_active = THEME.focus_colors[2]
+THEME.border_color_marked = xrdb.color1
 -- }}}
 
 -- {{{ Mouse finder
-THEME.mouse_finder_color = "#CC9393"
+THEME.mouse_finder_color = xrdb.color11
 -- mouse_finder_[timeout|animate_timeout|radius|factor]
 -- }}}
 
 THEME.bg_normal     = xrdb.background
-THEME.bg_focus      = xrdb.color12
+THEME.bg_focus      = xrdb.color11
 THEME.bg_urgent     = xrdb.color9
 THEME.bg_minimize   = xrdb.color8
 THEME.bg_systray    = THEME.bg_normal
@@ -37,8 +38,8 @@ THEME.fg_focus      = THEME.bg_normal
 THEME.fg_urgent     = THEME.bg_normal
 THEME.fg_minimize   = THEME.bg_normal
 
-THEME.titlebar_bg_focus = THEME.bg_normal
-THEME.titlebar_fg_focus = THEME.fg_normal
+THEME.titlebar_fg_focus = THEME.bg_normal
+THEME.titlebar_bg_focus = THEME.focus_colors[2]
 
 -- There are other variable sets
 -- overriding the default one when

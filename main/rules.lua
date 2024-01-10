@@ -2,6 +2,7 @@
 local awful = require("awful")
 -- Theme handling library
 local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
 
 local _M = {}
 
@@ -23,7 +24,7 @@ function _M.get(clientkeys)
 				raise = true,
 				keys = clientkeys,
 				screen = awful.screen.preferred,
-				placement = awful.placement.centered * awful.placement.no_overlap * awful.placement.no_offscreen ,
+				placement = awful.placement.centered * awful.placement.no_overlap * awful.placement.no_offscreen,
 				floating = false,
 			},
 		},
@@ -42,7 +43,6 @@ function _M.get(clientkeys)
 					"Blueman-manager",
 					"Inkscape",
 					"Gimp-2.10",
-          "Brave",
 					"Minecraft* 1.20.1",
 				},
 
@@ -56,8 +56,6 @@ function _M.get(clientkeys)
 				},
 			},
 			properties = {
-				honor_workarea = true,
-        honor_padding = true,
 				floating = true,
 			},
 		},
@@ -68,12 +66,17 @@ function _M.get(clientkeys)
 				type = { "normal", "dialog" },
 			},
 			properties = {
+				honor_workarea = true,
+				honor_padding = true,
 				titlebars_enabled = true,
 			},
 		},
 
 		{ rule_any = { class = { "Inkscape", "Gimp-2.10" } }, properties = { screen = 1, tag = "4" } },
-		{ rule = { role = "Brave" }, properties = { screen = 1, tag = "1" } },
+		{
+			rule = { class = "Brave" },
+			properties = { screen = 1, tag = "1", floating = true, placement = awful.placement.maximize, margins = dpi(5) },
+		},
 		{ rule = { class = "org.wezfurlong.wezterm" }, properties = { screen = 1, tag = "2" } },
 		{ rule = { class = "Spotify" }, properties = { screen = 1, tag = "9" } },
 		{ rule = { class = "Minecraft* 1.20.1" }, properties = { screen = 1, tag = "4" } },
