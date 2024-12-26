@@ -79,7 +79,7 @@ function WB.add_widgets_left(s)
 		filter = awful.widget.tasklist.filter.currenttags,
 		buttons = tasklist_buttons,
 		style = {
-      bg_focus = beautiful.focus_colors[2],
+      bg_focus = beautiful.border_focus[5],
 			border_strategy = "inner",
 		},
 		layout = {

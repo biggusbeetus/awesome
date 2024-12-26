@@ -1,0 +1,11 @@
+(local gears (require :gears))
+(local awful (require :awful))
+(require :deco.wallpaper)
+(local _M {})
+(local WB {})
+(global WB_PACKAGE WB)
+(require :statusbar.top)
+(fn _M.init []
+  (awful.screen.connect_for_each_screen (fn [s] (_G.set-wallpaper s)
+                                          (WB.generate_top_wibox s))))
+(setmetatable {} {:__call (fn [_ ...] (_M.init ...))})	

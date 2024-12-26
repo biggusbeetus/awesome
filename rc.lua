@@ -28,10 +28,6 @@ require("main.theme")
 
 -- -- --
 
--- Debian specific
-local debian = require("debian.menu")
-local has_fdo, freedesktop = pcall(require, "freedesktop")
-
 -- Calling All Module Libraries
 
 -- Custom Local Library

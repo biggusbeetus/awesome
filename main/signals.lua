@@ -39,12 +39,11 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-  local next_color = math.random(#beautiful.focus_colors)
+  local next_color = math.random(#beautiful.border_focus)
   if current_color == next_color then
-    next_color = ((next_color + 1) % #beautiful.focus_colors) + 1
+    next_color = ((next_color + 1) % #beautiful.border_focus) + 1
   end
-  beautiful.border_color_active = beautiful.focus_colors[next_color]
-  beautiful.titlebar_bg_focus = beautiful.focus_colors[next_color]
+  c.border_color = beautiful.border_focus[next_color]
   current_color = next_color
 end)
 client.connect_signal("unfocus", function(c)

@@ -72,14 +72,7 @@ function _M.get(clientkeys)
 			},
 		},
 
-		{ rule_any = { class = { "Inkscape", "Gimp-2.10" } }, properties = { screen = 1, tag = "4" } },
-		{
-			rule = { class = "Brave" },
-			properties = { screen = 1, tag = "1", floating = true, placement = awful.placement.maximize, margins = dpi(5) },
-		},
 		{ rule = { class = "org.wezfurlong.wezterm" }, properties = { screen = 1, tag = "2" } },
-		{ rule = { class = "Spotify" }, properties = { screen = 1, tag = "9" } },
-		{ rule = { class = "Minecraft* 1.20.1" }, properties = { screen = 1, tag = "4" } },
 	}
 
 	return rules
